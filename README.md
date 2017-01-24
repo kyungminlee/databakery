@@ -12,6 +12,7 @@
 | **Utensil**    | Program/source code used to produce data. |
 | **Appliance**  | Requirement to build **Utensil** or **Entree**. |
 | **Kitchen**    | Environment for making **Entree**. |
+| **Demo**       | Sample log. Can be file or attachment. |
 
 ### Verbs
 
