@@ -1,20 +1,33 @@
+# Trigonometry Generator
+#
+# Blah Blah
+# Blah.
 class TrigGen < Recipe
-  description "Trig Generator"
+  description 'Trig Generator'
+
+  author do
+    name 'Kyungmin Lee'
+    email 'kyungmin.lee.42@gmail.com'
+    affiliation 'Ohio State University'
+  end
+
+  pubdate '2017-01-02'
 
   appliance 'python'
   appliance 'numpy'
   appliance 'scipy'
   appliance 'matplotlib'
 
-  ingredient "nameOfIngredient" do
-    ingredient 
+  ingredient 'nameOfIngredient' do
+    url 'http://github.com/triggen/tan.txt'
+    sha256 ''
   end
 
-  utensil "cosgen.py" do
-    attachment "cosggen.py"
+  utensil 'cosgen.py' do
+    attachment 'cosggen.py'
   end
 
-  utensil "singen.py" do
+  utensil 'singen.py' do
     content <<-EOS
 import numpy as np
 import matplotlib
@@ -29,13 +42,13 @@ plt.savefig('sin.png', dpi=300)
 EOS
   end
 
-  entree "all.png"
+  entree 'all.png'
 
   demo :DATA
-  entree :DATA #????
+  entree :DATA # What should it be????
 
   def gather
-    #super gather
+    # super gather
     # (1) kitchen = make temporary directory
     # (2) copy all attached utensils/ingredients to kitchen
     # (3) download all utensils/ingredients to kitchen
@@ -49,7 +62,7 @@ EOS
     # table   = '/home/kmlee/databistro/cos-gen
     system 'python', 'singen.py'
     system 'python', 'cosgen.py'
-    copy 'sin.png', "cos.png", "all.png", "#{table}"
+    copy 'sin.png', 'cos.png', 'all.png', table
   end
 end
 __END__
